@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css">
+</head>
+<body>
+
+     <!-- Sidebar for Mobile (Hidden on Larger Screens) -->
+     <div id="sidebar" class="fixed inset-y-0 left-0  bg-gray-800 text-white w-64 transform -translate-x-full sm:hidden transition-transform duration-200 ease-in-out z-50">
+        <div class="p-4">
+            <h1 class="text-2xl font-bold">Santosh Vastralay</h1>
+        </div>
+        <nav class=" mt-4">
+            <a href="/santoshvas/Ecommerce/index.php" class="block py-2 px-4 hover:bg-gray-700">Home</a>
+            <a href="#" class="block py-2 px-4 hover:bg-gray-700">Women</a>
+            <a href="#" class="block py-2 px-4 hover:bg-gray-700">Men</a>
+            <a href="#" class="block py-2 px-4 hover:bg-gray-700">Others</a>
+            <a href="#" class="block py-2 px-4 hover:bg-gray-700">Cart</a>
+            <a href="/santoshvas/Ecommerce/admin/index.php" class="block py-2 px-4 hover:bg-gray-700">Admin</a>
+            
+        </nav>
+    </div>
+    
+    <section class="bg-blue-900 text-white px-10 p-5">
+    <div class=" flex justify-between items-center  ">
+        <div class="text-2xl font-bold">
+            Operating System
+        </div>
+        <nav>
+            <ul class="hidden md:flex space-x-6  text-xl font-semibold justify-center items-center gap-6">
+                <li>Home</li>
+                <li>Simulator</li>
+                <li>Conten</li>
+                <li>About us</li>
+            </ul>
+       
+         <!-- <i class="fas fa-bars text-2xl md:hidden" onclick="showMenu()"></i> -->
+              <!-- Mobile Menu Button (Hamburger Icon) -->
+              <button id="sidebarToggle" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+            </button>
+            </nav>
+        </div>
+            <div class="container mx-auto text-center py-20">
+                <h1 class="text-5xl font-bold mb-4">
+                    CPU Scheduling Simulator
+                </h1>
+                <p class="text-lg mb-8">
+                    Virtual lab for all types of Scheduling algorithms which will help you understand algorithms better.
+                    <br>Start simulation now.
+                </p>
+                <a href="docs.html" class="bg-white text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">GET STARTED</a>
+            </div>
+    </section>
+    
+</body>
+</html>
