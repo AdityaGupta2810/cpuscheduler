@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif']
+                    },
+                    colors: {
+                        'primary-red': '#f44336',
+                        'light-pink': '#FFB6C1',
+                        'light-gray': '#eceaea',
+                        'blog-red': '#f33c3c',
+                        'btn-blue': '#2F3A8F'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    </style>
+    <title>OS Virtual Lab</title>
+</head>
+
+<body class="font-poppins">
+    <section class="sub-header bg-cover bg-center bg-no-repeat h-[30vh] w-full relative" style="background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7))">
+        <nav class="flex justify-between items-center p-[2%_4%]">
+            <a href="./index.html" class="text-white text-2xl no-underline">OS LAB</a>
+            <div class="nav-links flex-1 text-right transition-all duration-1000" id="navLinks">
+                <i class="fas fa-window-close text-white cursor-pointer text-2xl m-2.5 hidden md:block" onclick="hideMenu()"></i>
+                <ul class="md:inline-block">
+                    <li class="md:inline-block list-none p-[5px_15px] relative"><a href="index.html" class="text-white no-underline text-base hover:after:w-full after:content-[''] after:w-0 after:h-0.5 after:bg-primary-red after:block after:mx-auto after:transition-all after:duration-500">HOME</a></li>
+                    <li class="md:inline-block list-none p-[5px_15px] relative"><a href="docs.html" class="text-white no-underline text-base hover:after:w-full after:content-[''] after:w-0 after:h-0.5 after:bg-primary-red after:block after:mx-auto after:transition-all after:duration-500">DOCS</a></li>
+                    <li class="md:inline-block list-none p-[5px_15px] relative"><a href="./backend/ganttcharts.html" class="text-white no-underline text-base hover:after:w-full after:content-[''] after:w-0 after:h-0.5 after:bg-primary-red after:block after:mx-auto after:transition-all after:duration-500">SIMULATOR</a></li>
+                    <li class="md:inline-block list-none p-[5px_15px] relative"><a href="about.html" class="text-white no-underline text-base hover:after:w-full after:content-[''] after:w-0 after:h-0.5 after:bg-primary-red after:block after:mx-auto after:transition-all after:duration-500">ABOUT</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars text-white cursor-pointer text-2xl m-2.5 md:hidden" onclick="showMenu()"></i>
+        </nav>
+
+        <h1 class="text-white mt-[10px] text-center text-4xl font-semibold">About us</h1>
+    </section>
+
+    <div class="bg-light-gray text-center">
+        <div class="pt-[60px]">
+            <h1 class="text-4xl font-semibold text-[#444]">Our Team</h1>
+        </div>
+
+        <div class="max-w-6xl mx-auto py-12 flex flex-wrap justify-center" data-aos="zoom-in-up">
+            <div class="m-2.5 p-[22px] border border-gray-300 max-w-[30%] transition-all duration-400 cursor-pointer hover:shadow-2xl md:max-w-full">
+                <img src="./eduford_img/profile_2.SVG" alt="" class="w-[200px] h-[200px]">
+                <div class="p-[5px] text-xl text-primary-red uppercase">Aditya Gupta</div>
+                <div class="italic text-[rgb(97,78,78)] my-3 font-light">12315413</div>
+                <div class="about">Student At Lovely Professional University , Jalandhar </div>
+                <div class="m-[14px]">
+                    <a href="https://www.facebook.com" class="inline-block h-[30px] w-[30px] transition-all duration-400"><i class="fa-brands fa-facebook text-primary-red"></i></a>
+                    <a href="https://www.instagram.com" class="inline-block h-[30px] w-[30px] transition-all duration-400"><i class="fa-brands fa-instagram text-primary-red"></i></a>
+                    <a href="https://www.twitter.com" class="inline-block h-[30px] w-[30px] transition-all duration-400"><i class="fa-brands fa-twitter text-primary-red"></i></a>
+                    <a href="https://www.linkedin.com" class="inline-block h-[30px] w-[30px] transition-all duration-400"><i class="fa-brands fa-linkedin text-primary-red"></i></a>
+                </div>
+            </div>
+
+            <div class="m-2.5 p-[22px] border border-gray-300 max-w-[30%] transition-all duration-400 cursor-pointer hover:shadow-2xl md:max-w-full">
+                <img src="./eduford_img/profile_1.SVG" alt="" class="w-[200px] h-[200px]">
+                <div class="p-[5px] text-xl text-primary-red uppercase">Anil Kumar Choudhary</div>
+                <div class="italic text-[rgb(97,78,78)] my-3 font-light">12320485</div>
+                <div class="about">Student At Lovely Professional University , Jalandhar</div>
+                <div class="m-[14px]">
+                    <a href="https://www.facebook.com" class="inline-block h-[30px] w-[30px] transition-all duration-400"><i class="fa-brands fa-facebook text-primary-red"></i></a>
+                    <a href="https://www.instagram.com" class="inline-block h-[30px] w-[30px] transition-all duration-400"><i class="fa-brands fa-instagram text-primary-red"></i></a>
+                    <a href="https://twitter.com" class="inline-block h-[30px] w-[30px] transition-all duration-400"><i class="fa-brands fa-twitter text-primary-red"></i></a>
+                    <a href="https://www.linkedin.com" class="inline-block h-[30px] w-[30px] transition-all duration-400"><i class="fa-brands fa-linkedin text-primary-red"></i></a>
+                </div>
+            </div>
+
+            <div class="m-2.5 p-[22px] border border-gray-300 max-w-[30%] transition-all duration-400 cursor-pointer hover:shadow-2xl md:max-w-full">
+                <img src="./eduford_img/profile_2.SVG" alt="" class="w-[200px] h-[200px]">
+                <div class="p-[5px] text-xl text-primary-red uppercase">Navneet Singh</div>
+                <div class="italic text-[rgb(97,78,78)] my-3 font-light">12307992</div>
+                <div class="about">Student At Lovely Professional University , Jalandhar</div>
+                <div class="m-[14px]">
+                    <a href="https://www.facebook.com" class="inline-block h-[30px] w-[30px] transition-all duration-400"><i class="fa-brands fa-facebook text-primary-red"></i></a>
+                    <a href="https://instagram.com" class="inline-block h-[30px] w-[30px] transition-all duration-400"><i class="fa-brands fa-instagram text-primary-red"></i></a>
+                    <a href="https://twitter.com" class="inline-block h-[30px] w-[30px] transition-all duration-400"><i class="fa-brands fa-twitter text-primary-red"></i></a>
+                    <a href="https://www.linkedin.com" class="inline-block h-[30px] w-[30px] transition-all duration-400"><i class="fa-brands fa-linkedin text-primary-red"></i></a>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <section class="footer text-center py-[30px]">
+        <p class="text-[rgb(31,30,30)] font-bold text-sm leading-[22px] py-2.5">Made With <i class="far fa-heart text-primary-red"></i> by K23SD</p>
+        <p class="text-[rgb(31,30,30)] font-bold text-sm leading-[22px] py-2.5"><i class="fa fa-copyright"></i> copyright 2022 || All rights reserved</p>
+    </section>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 200, // offset (in px) from the original trigger point
+            duration: 600
+        });
+    </script>
+</body>
+
+</html>
