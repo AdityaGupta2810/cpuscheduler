@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>OS Virtual Lab</title>
+    <style>
+        .sub-header {
+            background: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
+            background-position: center;
+            background-size: cover;
+            min-height: 50vh;
+            position: relative;
+        }
+        
+        .btn_1 {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 12px 34px;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .btn_1:hover {
+            border: 1px solid #f44336;
+            background: #f44336;
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-100">
+    <!-- Header Section -->
+    <section class="sub-header text-white text-center flex flex-col justify-center items-center">
+        <nav class="w-full px-4 py-2 absolute top-0 left-0 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold">OS LAB</a>
+            <div class="nav-links hidden md:flex" id="navLinks">
+                <ul class="flex space-x-6 text-xl">
+                    <li><a href="index.html" class="hover:text-gray-300">HOME</a></li>
+                    <li><a href="docs.html" class="hover:text-gray-300">DOCS</a></li>
+                    <li><a href="./backend/ganttcharts.html" class="hover:text-gray-300">SIMULATOR</a></li>
+                    <li><a href="about.html" class="hover:text-gray-300">ABOUT</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars text-xl md:hidden" onclick="showMenu()"></i>
+        </nav>
+
+        <h1 class="text-4xl md:text-5xl font-bold mt-20">Documentation</h1>
+    </section>
+
+    <!-- Documentation Content -->
+    <div class="max-w-[85%] mx-auto px-4 py-12 space-y-12 text-xl">
+        <section class="bg-white p-10 rounded-xl shadow-md">
+            <h1 class="text-3xl font-bold mb-4">What is CPU Scheduling?</h1>
+            <p class="text-gray-700">
+                CPU Scheduling is a process of determining which process will own CPU for execution while another process is
+                on hold. The main task of CPU scheduling is to make sure that whenever the CPU remains idle, the OS at least
+                select one of the processes available in the ready queue for execution. The selection process will be
+                carried out by the CPU scheduler. It selects one of the processes in memory that are ready for execution.
+            </p>
+        </section>
+
+        <section class="bg-white p-10 rounded-xl shadow-md" data-aos="zoom-in-up">
+            <h1 class="text-3xl font-bold mb-4">Why CPU Scheduling?</h1>
+            <p class="text-gray-700">
+                A typical process involves both I/O time and CPU time. In a uni programming system like MS-DOS, time spent
+                waiting for I/O is wasted and CPU is free during this time. In multi programming systems, one process can
+                use CPU while another is waiting for I/O. This is possible only with process scheduling.<br><br>
+                <strong>Objectives of Process Scheduling Algorithm</strong>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                    <li>Max CPU utilization [Keep CPU as busy as possible]</li>
+                    <li>Fair allocation of CPU.</li>
+                    <li>Max throughput [Number of processes that complete their execution per time unit]</li>
+                    <li>Min turnaround time [Time taken by a process to finish execution]</li>
+                    <li>Min waiting time [Time a process waits in ready queue]</li>
+                    <li>Min response time [Time when a process produces first response]</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="bg-white p-10 rounded-xl shadow-md" data-aos="zoom-in-up">
+            <h1 class="text-3xl font-bold mb-4">Important CPU scheduling Terminologies</h1>
+            <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                <li><strong>Burst Time/Execution Time:</strong> It is a time required by the process to complete execution. It
+                    is also called running time.</li>
+                <li><strong>Arrival Time:</strong> when a process enters in a ready state</li>
+                <li><strong>Finish Time:</strong> when process complete and exit from a system</li>
+                <li><strong>Multiprogramming:</strong> A number of programs which can be present in memory at the same time.
+                </li>
+                <li><strong>Jobs:</strong> It is a type of program without any kind of user interaction.</li>
+                <li><strong>User:</strong> It is a kind of program having user interaction.</li>
+                <li><strong>Process:</strong> It is the reference that is used for both job and user.</li>
+                <li><strong>CPU/IO burst cycle:</strong> Characterizes process execution, which alternates between CPU and I/O
+                    activity. CPU times are shorter than the time of I/O.</li>
+            </ul>
+        </section>
+
+        <section class="bg-white p-10 rounded-xl shadow-md" data-aos="zoom-in-up">
+            <h1 class="text-3xl font-bold mb-4">Types of CPU Scheduling</h1>
+            <p class="text-gray-700 mb-4">
+                There is mainly two major types of CPU Scheduling which is listed below.There is sub-types of this algorithm also. we have discussed all algorithm in details below.
+            </p>
+            <ul class="list-disc pl-6 space-y-1">
+                <li>Preemptive Algorithm</li>
+                <li>Non Preemptive Algorithm</li>
+            </ul>
+
+            <div class="mt-6">
+                <p class="font-bold mb-2">Preemptive Scheduling</p>
+                <p class="text-gray-700 mb-4">
+                    In Preemptive Scheduling, the tasks are mostly assigned with their priorities. Sometimes it is important to
+                    run a task with a higher priority before another lower priority task, even if the lower priority task is
+                    still running. The lower priority task holds for some time and resumes when the higher priority task
+                    finishes its execution.
+                </p>
+
+                <p class="font-bold mb-2">Non-Preemptive Scheduling</p>
+                <p class="text-gray-700">
+                    In this type of scheduling method, the CPU has been allocated to a specific process. The process that keeps
+                    the CPU busy will release the CPU either by switching context or terminating. It is the only method that can
+                    be used for various hardware platforms. That's because it doesn't need special hardware (for example, a
+                    timer) like preemptive scheduling.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-white p-10 rounded-xl shadow-md" data-aos="zoom-in-up">
+            <h1 class="text-3xl font-bold mb-4">Types of CPU scheduling Algorithm</h1>
+            <p class="text-gray-700 mb-2">There are mainly six types of process scheduling algorithm</p>
+            <ul class="list-disc pl-6 space-y-1">
+                <li>First Come First Serve (FCFS)</li>
+                <li>Shortest-Job-First (SJF) Scheduling</li>
+                <li>Shortest Remaining Time</li>
+                <li>Priority Scheduling</li>
+                <li>Round Robin Scheduling</li>
+                <li>Multilevel Queue Scheduling</li>
+            </ul>
+        </section>
+
+        <section class="bg-white p-10 rounded-xl shadow-md" data-aos="zoom-in-up">
+            <h1 class="text-3xl font-bold mb-4">1) First Come First Serve</h1>
+            <p class="text-gray-700 mb-4">
+                First Come First Serve is the full form of FCFS. It is the easiest and most simple CPU scheduling algorithm.
+                In this type of algorithm, the process which requests the CPU gets the CPU allocation first. This scheduling
+                method can be managed with a FIFO queue.<br><br>
+
+                As the process enters the ready queue, its PCB (Process Control Block) is linked with the tail of the queue.
+                So, when CPU becomes free, it should be assigned to the process at the beginning of the queue.
+            </p>
+
+            <h4 class="font-bold mb-2">Advantages</h4>
+            <p class="text-gray-700 mb-4">1. It is simple and easy to understand.</p>
+
+            <h4 class="font-bold mb-2">Disadvantages</h4>
+            <p class="text-gray-700 mb-4">
+                1. The process with less execution time suffer i.e. waiting time is often quite long.<br><br>
+                2. Favors CPU Bound process then I/O bound process.<br><br>
+                3. FCFS algorithm is particularly troublesome for time-sharing systems, where it is important that each user
+                get a share of the CPU at regular intervals.
+            </p>
+            <button class="btn_1" onclick="gotoSimulator();">Go to Simulator</button>
+        </section>
+
+        <section class="bg-white p-10 rounded-xl shadow-md" data-aos="zoom-in-up">
+            <h1 class="text-3xl font-bold mb-4">2) Shortest Job First</h1>
+            <p class="text-gray-700 mb-4">
+                SJF is a full form of (Shortest job first) is a scheduling algorithm in which the process with the shortest
+                execution time should be selected for execution next. This scheduling method can be preemptive or
+                non-preemptive. It significantly reduces the average waiting time for other processes awaiting
+                execution.
+            </p>
+
+            <h4 class="font-bold mb-2">Advantages</h4>
+            <p class="text-gray-700 mb-4">
+                1. Shortest jobs are favored.<br><br>
+                2. It is provably optimal, in that it gives the minimum average waiting time for a given set of processes.
+            </p>
+
+            <h4 class="font-bold mb-2">Disadvantages</h4>
+            <p class="text-gray-700 mb-4">
+                1. SJF may cause starvation, if shorter processes keep coming. This problem is solved by aging.<br><br>
+                2. It cannot be implemented at the level of short term CPU scheduling.
+            </p>
+            <button class="btn_1" onclick="gotoSimulator();">Go to Simulator</button>
+        </section>
+
+        <section class="bg-white p-10 rounded-lg shadow-md" data-aos="zoom-in-up">
+            <h1 class="text-2xl font-bold mb-4">3) Shortest Remaining Time</h1>
+            <p class="text-gray-700 mb-4">
+                The full form of SRT is Shortest remaining time. It is also known as SJF preemptive scheduling. In this
+                method, the process will be allocated to the task, which is closest to its completion. This method prevents
+                a newer ready state process from holding the completion of an older process.
+            </p>
+
+            <h4 class="font-bold mb-2">Advantages</h4>
+            <p class="text-gray-700 mb-4">
+                1. The main advantage of the SRTF algorithm is that it makes the processing of the jobs faster than the SJF
+                algorithm, mentioned it's overhead charges are not counted.
+            </p>
+
+            <h4 class="font-bold mb-2">Disadvantages</h4>
+            <p class="text-gray-700 mb-4">
+                1. In SRTF, the context switching is done a lot more times than in SJN due to more consumption of the CPU's
+                valuable time for processing. The consumed time of CPU then adds up to its processing time and which then
+                diminishes the advantage of fast processing of this algorithm.
+            </p>
+            <button class="btn_1" onclick="gotoSimulator();">Go to Simulator</button>
+        </section>
+
+        <section class="bg-white p-10 rounded-lg shadow-md" data-aos="zoom-in-up">
+            <h1 class="text-2xl font-bold mb-4">4) Priority Based Scheduling</h1>
+            <p class="text-gray-700 mb-4">
+                Priority scheduling is a method of scheduling processes based on priority. In this method, the scheduler
+                selects the tasks to work as per the priority.<br><br>
+
+                Priority scheduling also helps OS to involve priority assignments. The processes with higher priority should
+                be carried out first, whereas jobs with equal priorities are carried out on a round-robin or FCFS basis.
+                Priority can be decided based on memory requirements, time requirements, etc.
+            </p>
+
+            <h4 class="font-bold mb-2">Advantages</h4>
+            <p class="text-gray-700 mb-4">
+                1. This provides a good mechanism where the relative importance of each process maybe precisely defined.
+            </p>
+
+            <h4 class="font-bold mb-2">Disadvantages</h4>
+            <p class="text-gray-700 mb-4">
+                1. If high priority processes use up a lot of CPU time, lower priority processes may starve and be postponed
+                indefinitely.The situation where a process never gets scheduled to run is called starvation<br><br>
+                2. Another problem is deciding which process gets which priority level assigned to it.
+            </p>
+            <button class="btn_1" onclick="gotoSimulator();">Go to Simulator</button>
+        </section>
+
+        <section class="bg-white p-10 rounded-lg shadow-md" data-aos="zoom-in-up">
+            <h1 class="text-2xl font-bold mb-4">5) Round-Robin Scheduling</h1>
+            <p class="text-gray-700 mb-4">
+                Round robin is the oldest, simplest scheduling algorithm. The name of this algorithm comes from the
+                round-robin principle, where each person gets an equal share of something in turn. It is mostly used for
+                scheduling algorithms in multitasking. This algorithm method helps for starvation free execution of
+                processes.
+            </p>
+
+            <h4 class="font-bold mb-2">Advantages</h4>
+            <p class="text-gray-700 mb-4">
+                1. Every process gets an equal share of the CPU.<br><br>
+                2. RR is cyclic in nature, so there is no starvation.
+            </p>
+
+            <h4 class="font-bold mb-2">Disadvantages</h4>
+            <p class="text-gray-700 mb-4">
+                1. Setting the quantum too short, increases the overhead and lowers the CPU efficiency, but setting it too
+                long may cause poor response to short processes.<br><br>
+                2. Average waiting time under the RR policy is often long.
+            </p>
+            <button class="btn_1" onclick="gotoSimulator();">Go to Simulator</button>
+        </section>
+
+       
+
+        <section class="bg-white p-10 rounded-lg shadow-md" data-aos="zoom-in-up">
+            <h1 class="text-2xl font-bold mb-4">6) Multiple-Level Queues Scheduling</h1>
+            <p class="text-gray-700 mb-4">
+                This algorithm separates the ready queue into various separate queues. In this method, processes are assigned
+                to a queue based on a specific property of the process, like the process priority, size of the memory,
+                etc.<br><br>
+
+                However, this is not an independent scheduling OS algorithm as it needs to use other types of algorithms in
+                order to schedule the jobs.
+            </p>
+
+            <h4 class="font-bold mb-2">Advantages</h4>
+            <p class="text-gray-700 mb-4">
+                1. Application of separate scheduling for various kind of processes is possible
+            </p>
+
+            <h4 class="font-bold mb-2">Disadvantages</h4>
+            <p class="text-gray-700 mb-4">
+                1. The lowest level process faces starvation problem.
+            </p>
+            <button class="btn_1" onclick="gotoSimulator();">Go to Simulator</button>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <section class="bg-gray-900 text-white text-center py-12">
+        <div class="flex justify-center space-x-6 mb-6">
+            <a href="https://www.facebook.com" class="text-2xl hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/invites/contact/?i=17s1o7wfms500&utm_content=i08g8yn" class="text-2xl hover:text-pink-400"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/Krutarth12345?t=JASTMDZLzUB4VOR-OEd_kg&s=09" class="text-2xl hover:text-blue-300"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/krutarth-patel-653065205" class="text-2xl hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
+        </div>
+        
+        <p class="mb-2">Made With <i class="far fa-heart text-red-500"></i> by K23SD</p>
+        <p> <i class="fa fa-copyright"></i> copyright 2025 || All rights reserved</p>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 200,
+            duration: 800
+        });
+
+        function showMenu() {
+            document.getElementById('navLinks').classList.toggle('hidden');
+        }
+
+        function gotoSimulator() {
+            location.href = ("./backend/ganttcharts.html");
+        }
+    </script>
+</body>
+
+</html>
