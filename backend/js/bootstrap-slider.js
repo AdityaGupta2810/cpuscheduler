@@ -1,14 +1,7 @@
 /*! =========================================================
  * bootstrap-slider.js
- *
- * Maintainers:
- *		Kyle Kemp
- *			- Twitter: @seiyria
- *			- Github:  seiyria
- *		Rohit Kalkur
- *			- Twitter: @Rovolutionary
- *			- Github:  rovolution
- *
+
+ * 
  * =========================================================
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
