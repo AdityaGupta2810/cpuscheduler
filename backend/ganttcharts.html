@@ -102,7 +102,6 @@
       <ul>
         <li><a href="/frontend/index.html">HOME</a></li>
         <li><a href="/frontend/docs.html">DOCS</a></li>
-        <!-- <li><a href="blog.html">BLOG</a></li> -->
         <li><a href="ganttcharts.html">SIMULATOR</a></li>
         <li><a href="/frontend/about.html">ABOUT</a></li>
 
@@ -449,18 +448,16 @@
 
     <script src="./js/cpu-scheduler.js"> </script>
   
-
-  <script>
-    var navLinks = document.getElementById("navLinks");
-    function showMenu() {
-      navLinks.style.right = "0";
-    }
-
-    function hideMenu() {
-      navLinks.style.right = "-200px";
-    }
-
-  </script>
+    <script>
+      function showMenu() {
+        document.getElementById("navLinks").style.display = "flex";
+      }
+    
+      function hideMenu() {
+        document.getElementById("navLinks").style.display = "none";
+      }
+    </script>
+      
 
 </body>
 

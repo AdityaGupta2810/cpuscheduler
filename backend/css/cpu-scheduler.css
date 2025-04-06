@@ -298,6 +298,95 @@ legend .color-sample {
   background-color: inherit;
 }
 
+/* General nav styling */
+.navStyle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #151D3B;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Logo / Title */
+.navStyle a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Nav links container */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+/* Nav ul and list items */
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+  color: #00ADB5;
+}
+
+/* Hide/show buttons (icons) */
+.nav-links i,
+.navStyle > i {
+  display: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: #151D3B;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    display: none;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links ul li {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .nav-links i {
+    display: block;
+    align-self: flex-end;
+    margin-bottom: 1rem;
+  }
+
+  .navStyle > i {
+    display: block;
+  }
+}
 
 
 
